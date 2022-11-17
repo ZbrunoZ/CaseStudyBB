@@ -2,7 +2,7 @@
 
     <ng-container *ngFor="let fundo of fundos">
         <mat-grid-tile>
-			Nome: {{ fundo.nome | titlecase}} <br/><br/>
+			Fundo: {{ fundo.nome | titlecase}} <br/><br/>
             CNPJ: {{ fundo.cnpj}} <br/><br/>
             Data de Abertura: {{ fundo.dataAbertura | date: 'dd/MM/yyyy'}} <br/><br/>
             Risco: {{ fundo.risco | titlecase}} <br/><br/>
