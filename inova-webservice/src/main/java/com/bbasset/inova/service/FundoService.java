@@ -9,7 +9,6 @@ import com.bbasset.inova.model.Fundo;
 
 public class FundoService {
 
-	private static final String String = null;
 	private FundoDao fundoDao = new FundoDao();
 
 	public List<Fundo> listaFundos() {

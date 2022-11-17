@@ -41,17 +41,17 @@ export class CarteiraSugeridaComponent implements OnInit {
   
     switch (perfil) {
       case 'conservador': {
-        console.log('conservador')
+
         fundos = this.fundosConservadores
         break;
       }
       case 'moderado': {
-        console.log('moderado')
+
         fundos = this.fundosModerados
         break;
       }
       case 'arrojado': {
-        console.log('arrojado')
+
         fundos = this.fundosArrojados
         break;
       }
