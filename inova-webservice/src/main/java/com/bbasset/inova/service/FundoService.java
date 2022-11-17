@@ -1,34 +1,24 @@
 package com.bbasset.inova.service;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
+import com.bbasset.inova.dao.FundoDao;
 import com.bbasset.inova.model.Fundo;
-import com.bbasset.inova.utils.CSVReader;
 
 public class FundoService {
-	
-	
-	private CSVReader reader = new CSVReader();
-	
+
+	private FundoDao fundoDao = new FundoDao();
+
 	
 	public List<Fundo> listaFundos() {
 
+		return fundoDao.listaFundos();
+	}
 
-		List<Fundo> fundos = new ArrayList<>();
-
-		try {
-			
-			fundos = reader.carregaFundosDoCSV();
-			
-		} catch (IOException e) {
-
-			e.printStackTrace();
-		}
-				
+	public Fundo getFundo(Long codigoFundo) throws IOException {
 		
-		return fundos;
+		return fundoDao.getFundo(codigoFundo);
 	}
 
 }

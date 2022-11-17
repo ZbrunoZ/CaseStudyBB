@@ -13,7 +13,7 @@ public class CotaFundoService {
 	private CSVReader reader = new CSVReader();
 	
 	
-	public List<CotaFundo> listaCotaFundos() {
+	public List<CotaFundo> getHistoricoCotaTodosFundos() {
 
 
 		List<CotaFundo> cotas = new ArrayList<>();
@@ -29,6 +29,26 @@ public class CotaFundoService {
 				
 		
 		return cotas;
+	}
+	
+	
+	public List<CotaFundo> getHistoricoCotaFundo(Long codigoFundo) {
+
+
+		List<CotaFundo> historicoCotasFundo = new ArrayList<>();
+		
+		List<CotaFundo> historicoCotas = getHistoricoCotaTodosFundos();
+		
+		for (CotaFundo cotaFundo : historicoCotas) {
+			
+			if (cotaFundo.getFundo().getCodigo().equals(codigoFundo))
+				historicoCotasFundo.add(cotaFundo);
+			
+		}
+		
+		
+
+		return historicoCotasFundo;
 	}
 
 }
