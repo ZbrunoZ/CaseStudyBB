@@ -15,7 +15,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HomeComponent } from './views/home/home.component';
 import { CarteiraSugeridaComponent } from './views/carteira-sugerida/carteira-sugerida.component';
-import { CarteiraDialogComponent } from './views/dialogs/carteira-dialog/carteira.component';
+import { CarteiraDialogComponent } from './views/dialogs/carteira-dialog/carteira-dialog.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { MatSidenavModule } from  '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';

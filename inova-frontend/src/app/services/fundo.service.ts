@@ -10,12 +10,20 @@ import { Fundo } from "../models/fundo.model";
 })
 export class FundoService {
     
-  baseUrl = "http://localhost:8080/fundos/ativos/";
+  baseUrl = "http://localhost:8080/fundos/";
 
   constructor(private http: HttpClient, private snackBar: MatSnackBar) {}
 
   read(): Observable<Fundo[]> {
-    return this.http.get<Fundo[]>(this.baseUrl).pipe(
+    return this.http.get<Fundo[]>(this.baseUrl+"ativos/").pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
+  }
+
+  getSuggestedPortfolio(perfil: String): Observable<any> {
+
+    return this.http.get<any>(this.baseUrl+"sugeridos/"+perfil).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );

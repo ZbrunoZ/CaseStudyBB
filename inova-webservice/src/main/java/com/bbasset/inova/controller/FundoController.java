@@ -14,7 +14,7 @@ import com.bbasset.inova.service.FundoService;
 
 @RestController
 @RequestMapping("/fundos")
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin(origins = "*")
 public class FundoController {
 
 	
@@ -39,5 +39,12 @@ public class FundoController {
 		return fundoService.getFundo(codigoFundo);
 		
 	}
+	
+	@GetMapping("/sugeridos/{perfil}")
+	public List<String> listaFundosSugeridos(@PathVariable String perfil) {
+
+		return fundoService.listaFundosSugeridos(perfil);
+	}
+
 
 }
