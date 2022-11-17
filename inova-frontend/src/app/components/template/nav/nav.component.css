@@ -1,0 +1,12 @@
+.sidenav a {
+    color: #FFF;
+}
+
+.sidenav i {
+    padding-right: 10px;
+}
+
+.content {
+    padding: 5px;
+    background-color: #FFF;
+}
