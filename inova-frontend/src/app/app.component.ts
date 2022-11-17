@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import {Component, Inject} from '@angular/core';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
+export interface DialogData {
+  animal: 'panda' | 'unicorn' | 'lion';
+}
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  styles: []
+  styleUrls: ['app.component.css']
 })
 export class AppComponent {
-  title = 'inova-frontend';
+  constructor(public dialog: MatDialog) {}
+
 }
+

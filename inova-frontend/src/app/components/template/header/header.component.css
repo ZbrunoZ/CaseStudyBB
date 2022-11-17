@@ -1,6 +1,8 @@
 .header {
-    display: flex;
+    display: block;
+    padding-left: 0;
     align-items: center;
+    
 }
 
 .header a {
@@ -12,12 +14,6 @@
 
 .header .logo {
     max-height: 63px;
+    
 }
 
-.header .title-group {
-    padding-left: 25px;
-}
-
-.header .title-group i {
-    padding-right: 5px;
-}
