@@ -19,6 +19,7 @@ import { CarteiraDialogComponent } from './views/dialogs/carteira-dialog/carteir
 import { NavComponent } from './components/template/nav/nav.component';
 import { MatSidenavModule } from  '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { CorBotaoDirective } from './directives/cor-botao.directive';
 
 
 
@@ -30,6 +31,7 @@ import { MatListModule } from '@angular/material/list';
     CarteiraSugeridaComponent,
     CarteiraDialogComponent,
     NavComponent,
+    CorBotaoDirective,
   ],
   imports: [
     BrowserModule,

@@ -6,16 +6,17 @@ public class Cota {
 	
 	private Fundo fundo;
 	
+	//TODO: Mudar para Date ou LocalDateTime
 	private String data;
 	
-	private BigDecimal cota;
+	private BigDecimal valor;
 	
 	
-	public Cota(String data, Fundo fundo, BigDecimal cota) {
+	public Cota(String data, Fundo fundo, BigDecimal valor) {
 		super();
 		this.data = data;
 		this.fundo = fundo;
-		this.cota = cota;
+		this.valor = valor;
 	}
 
 	public String getData() {
@@ -34,12 +35,12 @@ public class Cota {
 		this.fundo = fundo;
 	}
 
-	public BigDecimal getCota() {
-		return cota;
+	public BigDecimal getValor() {
+		return valor;
 	}
 
-	public void setCota(BigDecimal cota) {
-		this.cota = cota;
+	public void setCota(BigDecimal valor) {
+		this.valor = valor;
 	}
 	
 	

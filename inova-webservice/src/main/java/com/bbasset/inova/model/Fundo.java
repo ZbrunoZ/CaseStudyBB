@@ -8,8 +8,10 @@ public class Fundo {
 	
 	private String cnpj;
 	
+	//TODO: Mudar para Date ou LocalDateTime
 	private String dataAbertura;
 	
+	//TODO: Mudar para Date ou LocalDateTime
 	private String dataEncerramento;
 	
 	private String risco;
