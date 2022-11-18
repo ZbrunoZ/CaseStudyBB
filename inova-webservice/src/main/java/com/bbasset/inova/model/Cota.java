@@ -2,16 +2,16 @@ package com.bbasset.inova.model;
 
 import java.math.BigDecimal;
 
-public class CotaFundo {
-	
-	private String data;
+public class Cota {
 	
 	private Fundo fundo;
+	
+	private String data;
 	
 	private BigDecimal cota;
 	
 	
-	public CotaFundo(String data, Fundo fundo, BigDecimal cota) {
+	public Cota(String data, Fundo fundo, BigDecimal cota) {
 		super();
 		this.data = data;
 		this.fundo = fundo;

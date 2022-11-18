@@ -12,19 +12,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-import com.bbasset.inova.model.CotaFundo;
+import com.bbasset.inova.model.Cota;
 import com.bbasset.inova.model.Fundo;
 
-public class CotaFundoDao {
+public class CotaDao {
 
 	private static final String CAMINHO_ARQUIVO = "src\\main\\resources\\arquivos\\cotas.csv";
 	
 	private FundoDao fundoDao = new FundoDao();
 	
-	public List<CotaFundo> carregaCotasDoCSV() throws IOException {
+	public List<Cota> carregaCotasDoCSV() throws IOException {
 
 		Path caminhoArquivo = Paths.get(CAMINHO_ARQUIVO);
-		List<CotaFundo> cotas = new ArrayList<>();
+		List<Cota> cotas = new ArrayList<>();
 
 		// create an instance of BufferedReader
 		// using try with resource, Java 7 feature to close resources
@@ -40,7 +40,7 @@ public class CotaFundoDao {
 
 				try {
 
-					CotaFundo cota = instanciaCota(atributos);
+					Cota cota = instanciaCota(atributos);
 					cotas.add(cota);
 
 				} catch (ParseException e) {
@@ -62,20 +62,20 @@ public class CotaFundoDao {
 
 	}
 	
-	private CotaFundo instanciaCota(String[] metadata) throws ParseException, NumberFormatException, IOException {
+	private Cota instanciaCota(String[] metadata) throws ParseException, NumberFormatException, IOException {
 
 		String data = metadata[0];
 		Fundo fundo = fundoDao.getFundo( Long.parseLong( metadata[1] ) );
 		BigDecimal cota = new BigDecimal(metadata[2].replace(",", "."));
 
-		return new CotaFundo(data, fundo, cota);
+		return new Cota(data, fundo, cota);
 
 	}
 	
 
-	public List<CotaFundo> listaHistoricoCotaFundos() {
+	public List<Cota> listaHistoricoCotaFundos() {
 
-		List<CotaFundo> cotas = new ArrayList<>();
+		List<Cota> cotas = new ArrayList<>();
 
 		try {
 
