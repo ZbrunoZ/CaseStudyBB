@@ -33,23 +33,9 @@ public class CotaService {
 	}
 	
 	
-	public List<Cota> getHistoricoCotaFundo(Long codigoFundo) {
+	public List<Cota> getHistoricoCotaFundo(Long codigoFundo) throws IOException {
 
-
-		List<Cota> historicoCotasFundo = new ArrayList<>();
-		
-		List<Cota> historicoCotas = getHistoricoCotaTodosFundos();
-		
-		for (Cota cota : historicoCotas) {
-			
-			if (cota.getFundo().getCodigo().equals(codigoFundo))
-				historicoCotasFundo.add(cota);
-			
-		}
-		
-		
-
-		return historicoCotasFundo;
+		return cotaDao.getHistoricoCotaFundo(codigoFundo);
 	}
 
 }

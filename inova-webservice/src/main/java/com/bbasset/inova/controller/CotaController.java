@@ -1,5 +1,6 @@
 package com.bbasset.inova.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +25,7 @@ public class CotaController {
 	}
 	
 	@GetMapping("/historico/{codigoFundo}")
-	public List<Cota> getHistoricoCotaFundo(@PathVariable Long codigoFundo) {
+	public List<Cota> getHistoricoCotaFundo(@PathVariable Long codigoFundo) throws IOException {
 
 		return cotaService.getHistoricoCotaFundo(codigoFundo);
 	}
