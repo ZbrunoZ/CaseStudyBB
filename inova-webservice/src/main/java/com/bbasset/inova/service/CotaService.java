@@ -4,13 +4,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.bbasset.inova.dao.CotaDao;
 import com.bbasset.inova.model.Cota;
-import com.bbasset.inova.utils.CSVReader;
 
 public class CotaService {
 	
 	
-	private CSVReader reader = new CSVReader();
+	private CotaDao cotaDao = new CotaDao();
+
 	
 	
 	public List<Cota> getHistoricoCotaTodosFundos() {
@@ -20,7 +21,7 @@ public class CotaService {
 
 		try {
 			
-			cotas = reader.carregaCotasDoCSV();
+			cotas = cotaDao.carregaCotasDoCSV();
 			
 		} catch (IOException e) {
 
